@@ -18,5 +18,5 @@
   @apply mx-auto mt-11 cursor-pointer w-fit bg-purple-500 text-white text-2xl font-semibold px-4 py-1 rounded-lg z-50
 }
 .turn-dialog{
-  @apply text-white text-5xl font-semibold w-fit mx-auto
+  @apply text-white text-4xl font-semibold w-fit mx-auto
 }
