@@ -1,22 +1,18 @@
 .box{
-  @apply h-24 w-24 mx-auto flex justify-center items-center text-6xl font-bold bg-amber-300 rounded-lg cursor-pointer hover:bg-lime-400
+  @apply h-24 w-24 flex justify-center items-center text-6xl font-bold bg-amber-300 rounded-lg cursor-pointer hover:bg-lime-400
 }
 .board{
-  @apply p-4 grid grid-cols-3 mt-auto mx-auto gap-3
-}
-.container-box{
-  background-color: #381157 ;
-  @apply h-screen
+  @apply p-4 grid grid-cols-3 gap-3
 }
 .board-container{
-  @apply  flex flex-col items-center h-3/4
+  @apply  flex flex-col items-center h-screen bg-[#300a50] relative justify-center gap-8;
 }
 .play-again-container{
-  @apply h-24 mb-2 w-full
+  @apply h-full mb-2 absolute top-4 w-full 
 }
 .play-again{
   @apply mx-auto mt-11 cursor-pointer w-fit bg-purple-500 text-white text-2xl font-semibold px-4 py-1 rounded-lg z-50
 }
 .turn-dialog{
-  @apply text-white text-4xl font-semibold w-fit mx-auto
+  @apply text-white text-4xl font-semibold w-fit
 }

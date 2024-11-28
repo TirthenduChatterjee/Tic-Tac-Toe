@@ -14,8 +14,8 @@ function App() {
   const [dialogbox, setDialogbox] = useState("Player X's move");
   const [winner, setWinner] = useState(null);
   const [tie, setTie] = useState(false);
-  const Playagain=()=>{
-    setSquare(prev=>prev.fill(null));
+  const Playagain = () => {
+    setSquare(prev => prev.fill(null));
     setX_turn(true);
     setDialogbox("Player X's move");
     setWinner(null);
@@ -66,21 +66,22 @@ function App() {
   };
   return (
     <>
-      <div className='container-box'>
         <div className='board-container'>
-          <div className='play-again-container'>
-            <div className={`play-again ${winner || tie?"visible":"invisible"}`} onClick={Playagain}>Play Again</div>
+          <div className={`play-again-container ${winner || tie ? "visible" : "invisible"}`}>
+            <div className={`play-again ${winner || tie ? "visible" : "invisible"}`} onClick={Playagain}>Play Again</div>
             <Celebration display={winner} />
           </div>
           <div className='board'>
             {squares.map((value, i) => (
-              <Square key={i} value={value} onClick={winner ? () => {} : () => turnHandler(i)} />
+              <Square key={i} value={value} onClick={winner ? () => { } : () => turnHandler(i)} />
             ))}
           </div>
+          <div className='turn-dialog'>
+            {dialogbox}
+          </div>
         </div>
-        <div className='turn-dialog'>
-          {dialogbox}
-        </div>
+      <div className='w-full bg-purple-950 text-white text-center p-4 font-semibold'>
+        Made by Mr Nobody
       </div>
     </>
   );
