@@ -19,3 +19,17 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'build'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+- task: AzureRmWebAppDeployment@5
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure for Students (af88cc52-49b2-4b85-bf31-e546ababe6d9)'
+    appType: 'webAppLinux'
+    WebAppName: 'Tic-tac-toe'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/build'
+    RuntimeStack: 'NODE|22-lts'
+    DeploymentTypeLinux: 'oneDeploy'
